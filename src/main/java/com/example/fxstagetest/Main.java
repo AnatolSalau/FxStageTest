@@ -14,17 +14,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class Main {
+public class Main extends Application{
   public static void main(String[] args) {
-    DemoApplication.launch(DemoApplication.class, args);
+    launch( args);
   }
 
 
-  public static class DemoApplication extends Application {
+  @Override
+  public void init() throws Exception {
 
-    @Override
+  }
+
+  @Override
     public void start(Stage primaryStage) throws IOException {
-      Pane root = FXMLLoader.load(getClass().getResource("/fxml/window.fxml"));
+    StackPane root = FXMLLoader.load(getClass().getResource("/fxml/window.fxml"));
 
       FxStage.configure(primaryStage)
             .withContent(root)
@@ -39,4 +42,4 @@ public class Main {
       primaryStage.show();
     }
   }
-}
+
